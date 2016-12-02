@@ -56,8 +56,18 @@ public class Owner extends Person {
     @NotEmpty
     @Digits(fraction = 0, integer = 10)
     private String telephone;
+    
+    private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets;
 
 
